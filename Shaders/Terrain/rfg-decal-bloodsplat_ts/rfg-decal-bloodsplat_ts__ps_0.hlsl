@@ -1,0 +1,302 @@
+cbuffer cb0_t : register(b0)
+{
+    float4 cb0_m[8] : packoffset(c0);
+};
+
+cbuffer cb1_t : register(b1)
+{
+    float4 cb1_m[1] : packoffset(c0);
+};
+
+cbuffer cb6_t : register(b6)
+{
+    float4 cb6_m[1] : packoffset(c0);
+};
+
+cbuffer cb2_t : register(b2)
+{
+    float4 cb2_m[3] : packoffset(c0);
+};
+
+uniform sampler2D SPIRV_Cross_Combinedt0s0;
+uniform sampler2D SPIRV_Cross_Combinedt1s1;
+uniform sampler2D SPIRV_Cross_Combinedt15s15;
+
+static float4 gl_FragCoord;
+static float3 v1;
+static float3 v4;
+static float4 v5;
+static float4 v6;
+static float3 v7;
+
+struct SPIRV_Cross_Input
+{
+    float3 v1 : TEXCOORD1;
+    float3 v4 : TEXCOORD4;
+    float4 v5 : TEXCOORD5;
+    float4 v6 : TEXCOORD6;
+    float3 v7 : TEXCOORD7;
+    float4 gl_FragCoord : VPOS;
+};
+
+static float4 shader_in[8];
+static float4 o0;
+static float4 r0;
+static float4 r1;
+static float4 r2;
+static float4 r3;
+static float4 r4;
+static float4 r5;
+
+void ps_main()
+{
+    r0 = tex2D(SPIRV_Cross_Combinedt0s0, shader_in[7].xyxx.xy);
+    float3 _78 = (r0.xyw * asfloat(uint3(1073741824u, 1073741824u, 1073741824u))) + asfloat(uint3(3212836864u, 3212836864u, 3212836864u));
+    r1 = float4(r1.x, _78.x, _78.y, _78.z);
+    float4 _87 = r0;
+    _87.y = r0.y + r0.y;
+    r0 = _87;
+    float4 _94 = r1;
+    _94.x = r1.w * r1.y;
+    r1 = _94;
+    float4 _106 = r0;
+    _106.w = mad(r1.xz.y, r1.xz.y, r1.xz.x * r1.xz.x);
+    r0 = _106;
+    float4 _110 = r0;
+    _110.x = r1.x;
+    r0 = _110;
+    float4 _118 = r0;
+    _118.w = (-r0.w) + asfloat(1065353216u);
+    r0 = _118;
+    float4 _125 = r0;
+    _125.w = max(r0.w, asfloat(0u));
+    r0 = _125;
+    float4 _130 = r0;
+    _130.z = sqrt(r0.w);
+    r0 = _130;
+    float3 _137 = r0.xyz + asfloat(uint3(2147483648u, 3212836864u, 3212836864u));
+    r0 = float4(_137.x, _137.y, _137.z, r0.w);
+    float3 _153 = (cb2_m[2].x.xxx * r0.xyz) + asfloat(uint3(0u, 0u, 1065353216u));
+    r0 = float4(_153.x, _153.y, _153.z, r0.w);
+    float4 _169 = r0;
+    _169.w = mad(r0.xyz.z, r0.xyz.z, mad(r0.xyz.y, r0.xyz.y, r0.xyz.x * r0.xyz.x));
+    r0 = _169;
+    float4 _174 = r0;
+    _174.w = rsqrt(r0.w);
+    r0 = _174;
+    float3 _180 = r0.www * r0.xyz;
+    r0 = float4(_180.x, _180.y, _180.z, r0.w);
+    float3 _187 = -shader_in[1].xyz;
+    float4 _199 = r0;
+    _199.w = mad(_187.z, r0.xyz.z, mad(_187.y, r0.xyz.y, _187.x * r0.xyz.x));
+    r0 = _199;
+    float4 _206 = r1;
+    _206.x = r0.w + r0.w;
+    r1 = _206;
+    float4 _212 = r0;
+    _212.w = r0.w + asfloat(1065353216u);
+    r0 = _212;
+    float4 _218 = r0;
+    _218.w = log2(abs(r0.w));
+    r0 = _218;
+    float4 _225 = r0;
+    _225.w = r0.w * asfloat(1083179008u);
+    r0 = _225;
+    float4 _230 = r0;
+    _230.w = exp2(r0.w);
+    r0 = _230;
+    float4 _237 = r0;
+    _237.w = r0.w + asfloat(925353388u);
+    r0 = _237;
+    float4 _243 = r0;
+    _243.w = min(r0.w, asfloat(1065353216u));
+    r0 = _243;
+    float3 _255 = (r0.xyz * (-r1.xxx)) + (-shader_in[1].xyz);
+    r1 = float4(_255.x, _255.y, _255.z, r1.w);
+    float4 _273 = r1;
+    _273.x = mad(r1.xyz.z, shader_in[5].xyz.z, mad(r1.xyz.y, shader_in[5].xyz.y, r1.xyz.x * shader_in[5].xyz.x));
+    r1 = _273;
+    float4 _282 = r1;
+    _282.y = abs(r1.x) + abs(r1.x);
+    r1 = _282;
+    float4 _294 = r1;
+    _294.x = clamp((r1.x * asfloat(1056964608u)) + asfloat(1056964608u), 0.0f, 1.0f);
+    r1 = _294;
+    float4 _304 = r1;
+    _304.y = ((-r1.y) * r1.y) + asfloat(1065353216u);
+    r1 = _304;
+    float4 _310 = r1;
+    _310.y = max(r1.y, asfloat(0u));
+    r1 = _310;
+    float4 _318 = r1;
+    _318.y = r1.y * cb0_m[7].y;
+    r1 = _318;
+    float3 _339 = float3(cb0_m[2].x, cb0_m[2].y, cb0_m[2].z) + (-float3(cb0_m[3].x, cb0_m[3].y, cb0_m[3].z));
+    r2 = float4(_339.x, _339.y, _339.z, r2.w);
+    float3 _356 = (r1.xxx * r2.xyz) + float3(cb0_m[3].x, cb0_m[3].y, cb0_m[3].z);
+    r1 = float4(_356.x, r1.y, _356.y, _356.z);
+    float3 _375 = (float3(cb1_m[0].x, cb1_m[0].y, cb1_m[0].z) * cb0_m[7].x.xxx) + (-r1.xzw);
+    r3 = float4(_375.x, _375.y, _375.z, r3.w);
+    float3 _386 = (r1.yyy * r3.xyz) + r1.xzw;
+    r1 = float4(_386.x, _386.y, _386.z, r1.w);
+    float4 _397 = r1;
+    _397.w = clamp(shader_in[7].z / cb2_m[2].y, 0.0f, 1.0f);
+    r1 = _397;
+    float2 _410 = (r1.ww * asfloat(uint2(3202770534u, 3192704205u))) + asfloat(uint2(1064514355u, 1065353216u));
+    r3 = float4(_410.x, _410.y, r3.z, r3.w);
+    float4 _419 = r1;
+    _419.w = (-r3.x) + r3.y;
+    r1 = _419;
+    r4 = tex2D(SPIRV_Cross_Combinedt1s1, shader_in[7].xyxx.xy);
+    float4 _436 = r2;
+    _436.w = (-r3.x) + r4.w;
+    r2 = _436;
+    float3 _448 = r4.xyz * float3(cb2_m[0].x, cb2_m[0].y, cb2_m[0].z);
+    r3 = float4(_448.x, _448.y, _448.z, r3.w);
+    float4 _457 = r1;
+    _457.w = clamp(r2.w / r1.w, 0.0f, 1.0f);
+    r1 = _457;
+    float4 _465 = r1;
+    _465.w = r1.w * cb2_m[2].z;
+    r1 = _465;
+    float4 _472 = r0;
+    _472.w = r0.w * r1.w;
+    r0 = _472;
+    float3 _484 = r0.www * float3(cb2_m[1].x, cb2_m[1].y, cb2_m[1].z);
+    r4 = float4(_484.x, _484.y, _484.z, r4.w);
+    float3 _491 = r1.xyz * r4.xyz;
+    r1 = float4(_491.x, _491.y, _491.z, r1.w);
+    float3 _500 = r1.xyz * cb0_m[7].z.xxx;
+    r1 = float4(_500.x, _500.y, _500.z, r1.w);
+    float4 _517 = r0;
+    _517.w = mad(r0.xyz.z, shader_in[5].xyz.z, mad(r0.xyz.y, shader_in[5].xyz.y, r0.xyz.x * shader_in[5].xyz.x));
+    r0 = _517;
+    float4 _526 = r1;
+    _526.w = abs(r0.w) + abs(r0.w);
+    r1 = _526;
+    float4 _535 = r0;
+    _535.w = clamp((r0.w * asfloat(1056964608u)) + asfloat(1056964608u), 0.0f, 1.0f);
+    r0 = _535;
+    float3 _550 = (r0.www * r2.xyz) + float3(cb0_m[3].x, cb0_m[3].y, cb0_m[3].z);
+    r2 = float4(_550.x, _550.y, _550.z, r2.w);
+    float4 _561 = r0;
+    _561.w = ((-r1.w) * r1.w) + asfloat(1065353216u);
+    r0 = _561;
+    float4 _567 = r0;
+    _567.w = max(r0.w, asfloat(0u));
+    r0 = _567;
+    float4 _575 = r0;
+    _575.w = r0.w * cb0_m[7].y;
+    r0 = _575;
+    float3 _593 = (float3(cb1_m[0].x, cb1_m[0].y, cb1_m[0].z) * cb0_m[7].x.xxx) + (-r2.xyz);
+    r5 = float4(_593.x, _593.y, _593.z, r5.w);
+    float3 _604 = (r0.www * r5.xyz) + r2.xyz;
+    r2 = float4(_604.x, _604.y, _604.z, r2.w);
+    float3 _614 = (r3.xyz * r2.xyz) + r1.xyz;
+    r1 = float4(_614.x, _614.y, _614.z, r1.w);
+    float2 _627 = shader_in[0].xy * float2(cb0_m[6].z, cb0_m[6].w);
+    r2 = float4(_627.x, _627.y, r2.z, r2.w);
+    r2 = tex2D(SPIRV_Cross_Combinedt15s15, r2.xyxx.xy);
+    float3 _641 = r1.xyz * r2.xxx;
+    r1 = float4(_641.x, _641.y, _641.z, r1.w);
+    float4 _659 = r0;
+    _659.w = mad(shader_in[6].xyz.z, shader_in[6].xyz.z, mad(shader_in[6].xyz.y, shader_in[6].xyz.y, shader_in[6].xyz.x * shader_in[6].xyz.x));
+    r0 = _659;
+    float4 _664 = r0;
+    _664.w = rsqrt(r0.w);
+    r0 = _664;
+    float3 _675 = (shader_in[6].xyz * r0.www) + shader_in[1].xyz;
+    r2 = float4(_675.x, r2.y, _675.y, _675.z);
+    float3 _683 = r0.www * shader_in[6].xyz;
+    r5 = float4(_683.x, _683.y, _683.z, r5.w);
+    float4 _699 = r0;
+    _699.w = mad(r0.xyz.z, r5.xyz.z, mad(r0.xyz.y, r5.xyz.y, r0.xyz.x * r5.xyz.x));
+    r0 = _699;
+    float4 _714 = r1;
+    _714.w = mad(r2.xzw.z, r2.xzw.z, mad(r2.xzw.y, r2.xzw.y, r2.xzw.x * r2.xzw.x));
+    r1 = _714;
+    float4 _719 = r1;
+    _719.w = rsqrt(r1.w);
+    r1 = _719;
+    float3 _725 = r1.www * r2.xzw;
+    r2 = float4(_725.x, r2.y, _725.y, _725.z);
+    float4 _742 = r0;
+    _742.x = clamp(mad(r0.xyz.z, r2.xzw.z, mad(r0.xyz.y, r2.xzw.y, r0.xyz.x * r2.xzw.x)), 0.0f, 1.0f);
+    r0 = _742;
+    float4 _748 = r0;
+    _748.x = r0.x + asfloat(925353388u);
+    r0 = _748;
+    float4 _753 = r0;
+    _753.x = log2(r0.x);
+    r0 = _753;
+    float4 _761 = r0;
+    _761.x = r0.x * cb2_m[2].w;
+    r0 = _761;
+    float4 _766 = r0;
+    _766.x = exp2(r0.x);
+    r0 = _766;
+    float4 _776 = r0;
+    _776.y = asfloat((asfloat(0u) >= r0.w) ? 4294967295u : 0u);
+    r0 = _776;
+    float4 _781 = r0;
+    _781.w = clamp(r0.w, 0.0f, 1.0f);
+    r0 = _781;
+    float4 _788 = r0;
+    _788.z = r2.y * r0.w;
+    r0 = _788;
+    float4 _795 = r0;
+    _795.w = max(r2.y, asfloat(1028443341u));
+    r0 = _795;
+    float4 _804 = r0;
+    _804.y = (asuint(r0.y) != 0u) ? asfloat(0u) : asfloat(1065353216u);
+    r0 = _804;
+    float4 _811 = r0;
+    _811.x = r0.y * r0.x;
+    r0 = _811;
+    float4 _818 = r0;
+    _818.x = r0.w * r0.x;
+    r0 = _818;
+    float3 _824 = r4.xyz * r0.xxx;
+    r0 = float4(_824.x, _824.y, r0.z, _824.z);
+    float3 _834 = (r0.zzz * r3.xyz) + r0.xyw;
+    r0 = float4(_834.x, _834.y, _834.z, r0.w);
+    float3 _850 = (r0.xyz * float3(cb1_m[0].x, cb1_m[0].y, cb1_m[0].z)) + r1.xyz;
+    r0 = float4(_850.x, _850.y, _850.z, r0.w);
+    float3 _859 = r0.xyz * shader_in[4].xyz;
+    r0 = float4(_859.x, _859.y, _859.z, r0.w);
+    float4 _868 = r0;
+    _868.w = (-shader_in[6].w) + asfloat(1065353216u);
+    r0 = _868;
+    float3 _874 = r0.xyz * r0.www;
+    r0 = float4(_874.x, _874.y, _874.z, r0.w);
+    float3 _891 = (shader_in[6].www * float3(cb0_m[4].x, cb0_m[4].y, cb0_m[4].z)) + r0.xyz;
+    r0 = float4(_891.x, _891.y, _891.z, r0.w);
+    float4 _897 = r0;
+    _897.w = shader_in[5].w;
+    r0 = _897;
+    o0 = r0 * float4(cb6_m[0].x, cb6_m[0].y, cb6_m[0].z, cb6_m[0].w);
+}
+
+void frag_main()
+{
+    shader_in[1] = float4(v1.x, v1.y, v1.z, shader_in[1].w);
+    shader_in[4] = float4(v4.x, v4.y, v4.z, shader_in[4].w);
+    shader_in[5] = v5;
+    shader_in[6] = v6;
+    shader_in[7] = float4(v7.x, v7.y, v7.z, shader_in[7].w);
+    float4 _929 = gl_FragCoord;
+    _929.w = 1.0f / _929.w;
+    shader_in[0] = float4(_929.xy.x, _929.xy.y, shader_in[0].z, shader_in[0].w);
+    ps_main();
+}
+
+void main(SPIRV_Cross_Input stage_input)
+{
+    gl_FragCoord = stage_input.gl_FragCoord + float4(0.5f, 0.5f, 0.0f, 0.0f);
+    v1 = stage_input.v1;
+    v4 = stage_input.v4;
+    v5 = stage_input.v5;
+    v6 = stage_input.v6;
+    v7 = stage_input.v7;
+    frag_main();
+}
