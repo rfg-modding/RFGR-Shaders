@@ -2,11 +2,13 @@
 Project to recreate the RFGR shader source code. The Shaders folder has the shaders. The code is very messy currently as its generated automatically by tools.
 
 ## HLSL generation process
-- Extract the DXBC bytecode from the games .fxo_kg files.
-- Use code from DXVK to decode the DXBC data and generate SPIRV from it.
+- Extract the DXBC bytecode from the games .fxo_kg files. See the `ShaderFile` class in [RFGM.Formats](https://github.com/rfg-modding/RFGM.Formats/blob/master/RFGM.Formats/Shaders/ShaderFile.cs). See the VertexShadersBytecode and PixelShadersBytecode fields.
+- Use code from DXVK to decode the DXBC data and generate SPIRV from it. Specifically load the shader bytecode into `dxvk::DxbcReader` and pass that into `dxvk::DxbcModule`, then compile it into spirv bytecode. [DXVK](https://github.com/doitsujin/dxvk/tree/master/src/dxbc).
 - Use SPIRV-Cross to generate HLSL code from the SPIRV.
 
-The code for generating them hasn't been published yet since this is just the first attempt. There's information in the generated code thats missing or incomplete such as the vertex format definitions and the names & definitions of different input constants. There's also many ways the code could be simplified. Such as things like `asfloat(1065353216u)`, which is just `1.0f`. The plan is to use tools to cleanup the generated code as best as we can. Then manually clean up the code the rest of the way. 
+The code for converting the DXBC -> SPIRV -> HLSL has unfortunately been lost. But it should be reasonably easy to recreate by using the DXBC classes from DXVK and the SPIRV-Cross library as described above. This repo was created in a fairly short time to test the idea, and has a lot of room for improvement. 
+
+There's information in the generated code thats missing or incomplete such as the vertex format definitions and the names & definitions of different input constants. There's also many ways the code could be simplified. Such as things like `asfloat(1065353216u)`, which is just `1.0f`. Ideally code cleanup like that would be automated with tools. Then manually clean up the code the rest of the way. 
 
 ## Shaders folder structure
 - The top level folders such as "Terrain" and "Character" are the categories the game assigns to each of these shaders.
